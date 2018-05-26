@@ -1,0 +1,14 @@
+{
+  "name": "jongfill",
+  "version": "0.1.0",
+  "description": "Fill hangul text with a given Jongseong",
+  "main": "index.js",
+  "author": "Vichyssoise <v@vichyssoise.io>",
+  "license": "WTFPL",
+  "scripts": {
+    "test": "ava"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0"
+  }
+}
