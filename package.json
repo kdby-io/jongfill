@@ -4,6 +4,7 @@
   "description": "Fill hangul text with a given Jongseong",
   "main": "index.js",
   "author": "Vichyssoise <v@vichyssoise.io>",
+  "repository": "git@github.com:vichyssoise/jongfill.git",
   "license": "WTFPL",
   "scripts": {
     "test": "ava"
