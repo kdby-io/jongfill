@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Fill hangul text with a given Jongseong",
   "main": "index.js",
-  "author": "Vichyssoise <v@vichyssoise.io>",
+  "author": "Sangwon Kim <dev@pueue.com>",
   "repository": "git@github.com:vichyssoise/jongfill.git",
   "license": "WTFPL",
   "scripts": {
