@@ -12,28 +12,29 @@ const getFillerCode = filler => {
   return fillerCode
 }
 
-const isHangul = char => {
-  const charCode = char.charCodeAt(0)
+const isHangul = charCode => {
   return HANGUL_OFFSET <= charCode && charCode <= HANGUL_LIMIT
 }
 
-const getJong = char => {
-  const charCode = char.charCodeAt(0)
+const getJong = charCode => {
   return (charCode - HANGUL_OFFSET) % 28
 }
 
 
 const jongFill = (filler, text, options = { replace: true }) => {
   const fillerCode = getFillerCode(filler)
-  const filledText = text.split('').map(char => {
-    if (!isHangul(char)) return char
+  const filledText = text.split('')
+    .map(char => char.charCodeAt(0))
+    .map(charCode => {
+      if (!isHangul(charCode)) return charCode
 
-    const jong = getJong(char)
-    if (jong && !options.replace) return char
+      const jong = getJong(charCode)
+      if (jong && !options.replace) return charCode
 
-    const filledCharCode = char.charCodeAt(0) - jong + fillerCode
-    return String.fromCharCode(filledCharCode)
-  }).join('')
+      return charCode - jong + fillerCode
+    })
+    .map(charCode => String.fromCharCode(charCode))
+    .join('')
 
   return filledText
 }
